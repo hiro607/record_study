@@ -43,12 +43,6 @@ st.dataframe(st.session_state.data)
 st.subheader('Temps d\'Étude quotidien')
 if not st.session_state.data.empty:
     daily_study_time = st.session_state.data.groupby('Date')['Heures d\'étude'].sum()
-    fig, ax = plt.subplots()
-    daily_study_time.plot(kind='bar', ax=ax)
-    ax.set_ylabel('Heures d\'étude')
-    ax.set_xlabel('Date')
-    st.pyplot(fig)
-
     total_study_time = st.session_state.data['Heures d\'étude'].sum()
     average_study_time = st.session_state.data['Heures d\'étude'].mean()
     st.subheader(f'Temps d\'étude total: {total_study_time:.2f} heures')
