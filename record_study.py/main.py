@@ -15,11 +15,11 @@ def load_data(file_path):
 def save_data(df, file_path):
     df.to_csv(file_path, index=False)
 
-file_path = 'study_records_st.csv'
+file_path = 'study_records.csv'
 if 'data' not in st.session_state:
     st.session_state.data = load_data(file_path)
 
-st.title('Application de Suivi d\'Études en japonais')
+st.title('Journal d\'apprentissage')
 
 with st.form('Formulaire de suivi d\'études'):
     date = st.date_input('Date')
